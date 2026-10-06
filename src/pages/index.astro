@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+const services = [
+  { n: '01', title: 'Cut & style', text: 'A fresh shape, soft layers, or a whole new look. Haircuts and styling that feel like you.', tags: 'Haircuts · Blowouts · Updos' },
+  { n: '02', title: 'Color & dimension', text: 'From a subtle refresh to something brighter. Find your shade with our experienced stylists.', tags: 'Color · Highlights · Ombré · Balayage' },
+  { n: '03', title: 'Texture & care', text: 'Explore a smoother finish, a new wave, or conditioning care for your next hair chapter.', tags: 'Perms · Japanese straightening · Repair treatments' },
+];
+const looks = [
+  { src: 'photo-1524504388940-b1c1722653e1', title: 'Soft movement', category: 'cut', alt: 'Illustrative portrait with long flowing hair' },
+  { src: 'photo-1524250502761-1ac6f2e30d43', title: 'A little dimension', category: 'color', alt: 'Illustrative portrait with warm dimensional hair' },
+  { src: 'photo-1534528741775-53994a69daeb', title: 'Natural texture', category: 'texture', alt: 'Illustrative portrait with natural curly hair' },
+];
+const yelp = 'https://www.yelp.com/biz/pell-22-hair-salon-new-york';
+const directions = 'https://www.google.com/maps/search/?api=1&query=22+Pell+St+B+New+York+NY+10013';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pell 22 Hair Salon | Cuts, Color & Care in NYC Chinatown</title>
+    <meta name="description" content="Meet your next good hair day at Pell 22 Hair Salon. Haircuts, color, perms and styling at 22 Pell Street in New York's Chinatown. Call (212) 233-6789." />
+    <meta name="theme-color" content="#29493b" /><link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="topbar">A little refresh. A whole lot of you. <span>22 Pell Street, NYC</span></div>
+    <header>
+      <a class="brand" href="#home" aria-label="Pell 22 Hair Salon home">pell<span>22</span><small>HAIR SALON · CHINATOWN, NYC</small></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">Menu <span>☰</span></button>
+      <nav id="navigation" aria-label="Main navigation"><a href="#services">Our services</a><a href="#story">Our story</a><a href="#looks">The inspiration</a><a href="#visit">Find us</a><a class="button small" href="tel:+12122336789">Let's talk hair <span>↗</span></a></nav>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> YOUR NEIGHBORHOOD. YOUR NEXT LOOK.</p><h1>Good hair.<br/>Good energy.<br/><em>Right here.</em></h1><p class="intro">A fresh cut, a new color, a little confidence.<br/>Welcome to Pell 22 — your hair salon in the heart of Chinatown.</p><div class="hero-actions"><a class="button" href="tel:+12122336789">Call for an appointment <span>↗</span></a><a class="text-link" href="#services">Explore our services <span>↓</span></a></div><div class="hero-detail"><span class="tiny-spark">✳</span><p>Experienced hands. A personal touch.<br/><strong>Walk-ins welcome, too.</strong></p></div></div>
+        <div class="hero-visual"><img class="hero-photo" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1400&q=85" alt="Illustrative salon photograph of a stylist working with a client's hair" fetchpriority="high" /><div class="photo-shade"></div><div class="photo-caption"><span>NEW YORK ROOTS.<br/>A FRESH POINT OF VIEW.</span><span>↓</span></div><div class="round-stamp">A GOOD HAIR DAY<br/><b>starts here.</b><span>PELL STREET · NYC</span></div><span class="vertical-note">CUT · COLOR · TEXTURE · CARE</span></div>
+      </section>
+      <div class="ribbon" aria-label="Salon specialties"><span>Made for your everyday</span><b>✳</b><span>Rooted in Chinatown</span><b>✳</b><span>A fresh perspective</span><b>✳</b><span>Always you</span></div>
+      <section class="section services" id="services"><div class="section-heading"><div><p class="eyebrow">THE MENU</p><h2>Small changes.<br/><em>Big good-hair energy.</em></h2></div><p>Whatever brings you to our chair,<br/>let's find a look that fits your life.</p></div><div class="service-grid">{services.map(service => <article class="service-card"><div class="service-top"><span>{service.n}</span><span>↗</span></div><h3>{service.title}</h3><p>{service.text}</p><div class="tags">{service.tags}</div><a href="tel:+12122336789">Talk to us about this service <span>↗</span></a></article>)}</div><p class="service-note">Every head of hair is different. Call for current pricing and a consultation.</p></section>
+      <section class="story" id="story"><div class="story-photo"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=85" alt="Illustrative photograph of a bright salon interior" loading="lazy" /><span class="image-label">A PLACE TO FEEL LIKE YOURSELF.</span></div><div class="story-copy"><p class="eyebrow">A PELL STREET ORIGINAL</p><h2>New York spirit.<br/><em>Personal by nature.</em></h2><p>There's something special about a neighborhood salon. A familiar chair. An honest conversation. A stylist who listens.</p><p>Here on Pell Street, our experienced team brings a personal approach to cuts, color, and care. From a simple trim to a fresh direction, we help you find a look that feels right for you.</p><a class="text-link" href="#visit">Come meet your next look <span>↗</span></a><div class="story-signature">See you in the chair.<span>— The Pell 22 team</span></div></div></section>
+      <section class="section looks" id="looks"><div class="section-heading"><div><p class="eyebrow">YOUR NEXT CHAPTER</p><h2>A little <em>inspiration.</em></h2></div><div class="filters" role="group" aria-label="Filter hair inspiration"><button class="active" data-filter="all" aria-pressed="true">All looks</button><button data-filter="cut" aria-pressed="false">Cuts</button><button data-filter="color" aria-pressed="false">Color</button><button data-filter="texture" aria-pressed="false">Texture</button></div></div><div class="look-grid">{looks.map(look => <figure data-category={look.category}><div class="look-image"><img src={`https://images.unsplash.com/${look.src}?auto=format&fit=crop&w=900&q=85`} alt={look.alt} loading="lazy" /></div><figcaption><span>{look.title}</span><span>↗</span></figcaption></figure>)}</div><div class="gallery-bottom"><p>Illustrative looks to start the conversation.<br/>For salon photos and client results, explore our social pages.</p><a class="text-link" href="https://www.facebook.com/Pell22Hair/" target="_blank" rel="noopener noreferrer">Find us on Facebook <span>↗</span></a></div></section>
+      <section class="neighborhood"><p class="eyebrow">FROM THE NEIGHBORHOOD</p><h2>Good hair comes with<br/><em>a good conversation.</em></h2><p>Get to know Pell 22 through the people who have sat in our chairs.</p><a class="button outline" href={yelp} target="_blank" rel="noopener noreferrer">Read our reviews on Yelp <span>↗</span></a></section>
+      <section class="section visit" id="visit"><div class="visit-copy"><p class="eyebrow">COME ON OVER</p><h2>Your next good<br/>hair day <em>is calling.</em></h2><p>Bring an inspiration photo, an idea,<br/>or just yourself. We'll take it from there.</p><a class="button" href="tel:+12122336789">Call (212) 233-6789 <span>↗</span></a><p class="booking-note">Appointments by phone · Walk-ins welcome</p></div><div class="visit-card"><div class="location-heading"><span class="location-icon">↗</span><p>IN THE HEART OF CHINATOWN</p></div><h3>22 Pell Street, B</h3><p>New York, NY 10013</p><div class="hours"><span>Monday – Sunday</span><strong>9:30 am – 7:00 pm</strong></div><a class="text-link" href={directions} target="_blank" rel="noopener noreferrer">Get directions <span>↗</span></a><p class="hours-note">Holiday hours may vary. Give us a call before your visit.</p><div class="street-lines" aria-hidden="true"><span>PELL STREET</span><i></i><b>22</b></div></div></section>
+    </main>
+    <footer><div class="footer-top"><a class="brand footer-brand" href="#home">pell<span>22</span><small>YOUR NEXT GOOD HAIR DAY.</small></a><p>Rooted in Chinatown.<br/>Ready for your next chapter.</p><div><a href="https://www.facebook.com/Pell22Hair/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href={yelp} target="_blank" rel="noopener noreferrer">Yelp ↗</a><a href="tel:+12122336789">(212) 233-6789 ↗</a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Pell 22 Hair Salon</span><span>22 Pell Street · New York, NY</span><a href="#home">Back to top ↑</a></div></footer>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector('nav');
+      toggle?.addEventListener('click', () => { const open = toggle.getAttribute('aria-expanded') !== 'true'; toggle.setAttribute('aria-expanded', String(open)); nav?.classList.toggle('open', open); });
+      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false'); }));
+      document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach(button => button.addEventListener('click', () => {
+        document.querySelectorAll('[data-filter]').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
+        button.classList.add('active'); button.setAttribute('aria-pressed', 'true');
+        document.querySelectorAll<HTMLElement>('[data-category]').forEach(item => { item.hidden = button.dataset.filter !== 'all' && button.dataset.filter !== item.dataset.category; });
+      }));
+    </script>
+  </body>
+</html>
